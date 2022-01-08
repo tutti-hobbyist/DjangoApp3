@@ -1,0 +1,9 @@
+
+{% comment %} object_listは、views.py内で定義したTodoListクラス(ListView継承)により作成されたインスタンスのリスト {% endcomment %}
+{% for post in object_list %}
+
+<ul>
+    <li>{{ post.title }} : {{ post.memo }}</li>
+</ul>
+
+{% endfor %}
