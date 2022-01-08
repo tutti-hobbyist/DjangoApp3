@@ -1,3 +1,15 @@
+{% extends 'base.html' %}
 
-{% comment %} objectは、views.py内で定義したTodoDetialクラス(DetailView継承)により作成されたインスタンス {% endcomment %}
-{{ object.title }}
+{% block header %}
+<div class="alert alert-dark" role="alert">
+    This is Detail
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+    {{ object.title }}
+    {{ object.memo }}
+  </div>
+{% endblock content %}
+
