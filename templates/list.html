@@ -1,24 +1,27 @@
 {% extends 'base.html' %}
 
+{% block title %}
+<title>Todoリスト一覧</title>
+{% endblock title %}
+
 {% block header %}
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">TodoList</h1>
-      <p class="lead">TodoListの作成アプリ</p>
+      <p class="lead">TodoList作成アプリ</p>
     </div>
 </div>
 {% endblock header %}
 
 {% block content %}
-<div class="container">
+    <p><font size="5" color=Blue>Todo新規作成 : </font><a href="{% url 'create' %}" class="btn btn-sm btn-info mb-3" tabindex="-1" role="button" aria-disabled="true">Create</a></p>
     {% for item in object_list %}
     <div class="alert alert-{{ item.priority }} role="alert">
         <p>{{ item.title }}</p>
-        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Edit</a>
-        <a href="#" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Detail</a>
-        <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Delete</a>
+        <p>期日 : {{item.dueDate | date:"o/n/j"}}</p>
+        <a href="{% url 'update' item.pk %}" class="btn btn-sm btn-primary" tabindex="-1" role="button" aria-disabled="true">Edit</a>
+        <a href="{% url 'detail' item.pk %}" class="btn btn-sm btn-success" tabindex="-1" role="button" aria-disabled="true">Detail</a>
+        <a href="{% url 'delete' item.pk %}" class="btn btn-sm btn-secondary" tabindex="-1" role="button" aria-disabled="true">Delete</a>
     </div>
     {% endfor %}
-</div>
 {% endblock content %}
-

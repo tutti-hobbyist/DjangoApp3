@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Todo削除</title>
+{% endblock title %}
+
+{% block content %}
+<form action='' method='POST'>
+    <p>このTodoリストを削除しますか？</p>
+    <div class="alert alert-info" role="alert">
+        <p>タイトル : {{ object.title }}</p>
+        <p>内容 : {{ object.memo }}</p>
+        <p>優先度 : {{ object.priority }}</p>
+        <p>期日 : {{ object.dueDate }}</p>
+    </div>
+    <input class='btn btn-secondary' type='submit' value='Delete'>
+</form>
+{% endblock content %}

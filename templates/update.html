@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Todoリスト更新</title>
+{% endblock title %}
+
+{% block content %}
+<div class="alert alert-info" role="alert">
+<form action='' method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class='btn btn-primary' type='submit' value='Update'>
+</form>
+</div>
+{% endblock content %}

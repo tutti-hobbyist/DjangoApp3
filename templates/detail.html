@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
+{% block title %}
+<title>Todo詳細</title>
+{% endblock title %}
+
 {% block header %}
-<div class="alert alert-dark" role="alert">
-    This is Detail
-</div>
 {% endblock header %}
 
 {% block content %}
-<div class="alert alert-success" role="alert">
-    {{ object.title }}
-    {{ object.memo }}
-  </div>
+<div class="alert alert-info" role="alert">
+    <p>タイトル : {{ object.title }}</p>
+    <p>内容 : {{ object.memo }}</p>
+    <p>優先度 : {{ object.priority }}</p>
+    <p>期日 : {{ object.dueDate }}</p>
+</div>
 {% endblock content %}
 
