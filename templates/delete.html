@@ -6,6 +6,7 @@
 
 {% block content %}
 <form action='' method='POST'>
+    {% csrf_token %}
     <p>このTodoリストを削除しますか？</p>
     <div class="alert alert-info" role="alert">
         <p>タイトル : {{ object.title }}</p>
